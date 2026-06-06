@@ -1,7 +1,12 @@
 ## Lessons from the VM-based OpenVAS install
 
-My first attempt was to install OpenVAS directly on an Ubuntu Server VM in Proxmox. I originally gave the VM only 40 GB disk and 4 GB RAM, which caused “no space left on device” and “out of memory (killed gvmd)” errors during installation and setup. I rebuilt the VM with 65 GB disk and 8 GB RAM, which resolved the resource issues.
-
-After that, I was able to install `gvm` and run `gvm-setup`, but the web interface (gsad) was only listening on the loopback address `127.0.0.1:9392` instead of `0.0.0.0:9392`, so I could not reach it from other machines on my network. I experimented with manually starting `gsad` bound to `0.0.0.0` and verified that the port was open, but the browser still showed “URL not found” when I tried to access the web UI.
-
-Because of these Ubuntu packaging and service issues, I decided to pivot to running OpenVAS in a Docker-based LXC container on Proxmox instead. This container approach should be easier to manage, more portable, and better aligned with how modern Greenbone Community Edition deployments are documented.
+My first attempt was to install OpenVAS directly on an Ubuntu Server VM in Proxmox. 
+I originally gave the VM only 40 GB disk and 4 GB RAM, which caused “no space left on device” and “out of memory (killed gvmd)” errors during installation and setup. 
+I rebuilt the VM with 65 GB disk and 8 GB RAM, which resolved the resource issues.
+After that, I was able to install `gvm` and run `gvm-setup`, but the web interface (gsad) was only 
+listening on the loopback address `127.0.0.1:9392` instead of `0.0.0.0:9392`, so I could not reach it from other machines on my network. 
+I experimented with manually starting `gsad` bound to `0.0.0.0` and verified that the port was open, 
+but the browser still showed “URL not found” when I tried to access the web UI.
+Because of these Ubuntu packaging and service issues, 
+I decided to pivot to running OpenVAS in a Docker-based LXC container on Proxmox instead.
+This container approach should be easier to manage, more portable, and better aligned with how modern Greenbone Community Edition deployments are documented.
