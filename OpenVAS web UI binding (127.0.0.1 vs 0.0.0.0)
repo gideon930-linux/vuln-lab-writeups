@@ -1,1 +1,5 @@
-Next, even when Greenbone/OpenVAS was running, I couldn’t reach the web UI from my host browser. The issue was that the web interface was bound only to 127.0.0.1 (localhost) inside the VM, not to 0.0.0.0 or the VM’s LAN IP. That meant it was only accessible from inside the VM itself. I learned how service binding works and that, for web apps I want to reach over the network, I need to check what IP/interface the service is listening on and adjust configs or firewalls accordingly.
+Next, even when Greenbone/OpenVAS was running, I couldn’t reach the web UI from my host browser. 
+The issue was that the web interface was bound only to 127.0.0.1 (localhost) inside the VM, not to 0.0.0.0 or the VM’s LAN IP. 
+That meant it was only accessible from inside the VM itself. 
+I learned how service binding works and that, for web apps I want to reach over the network, 
+I need to check what IP/interface the service is listening on and adjust configs or firewalls accordingly.
