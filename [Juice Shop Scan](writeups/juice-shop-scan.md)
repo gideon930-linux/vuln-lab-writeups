@@ -1,0 +1,1 @@
+This write-up covers a scan of OWASP Juice Shop using OpenVAS and GSA inside my homelab. I used the scan to identify common web application vulnerabilities and practice reviewing findings by severity. The exercise helped me understand how an intentionally vulnerable target appears in a professional scanning workflow.
