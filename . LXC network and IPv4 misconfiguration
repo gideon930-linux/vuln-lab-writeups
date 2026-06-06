@@ -1,0 +1,8 @@
+For the LXC container, Docker initially failed because the container had no working IPv4
+connectivity. I accidentally left IPv4 set to “none” with a static address instead of configuring it
+to use DHCP. As a result, the container only had an IPv6 address and could not reach the
+internet over IPv4, so commands like sudo apt update and the Docker install script could not
+download packages. After realizing this, I changed the LXC network to use IPv4 via DHCP,
+rebooted the container, verified it had a valid IPv4 address, and then the apt update and
+Docker installation completed successfully. This taught me how critical correct network
+settings are, and how to diagnose issues by checking IP addressing, ping tests, and DNS.
